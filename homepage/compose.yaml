@@ -12,3 +12,5 @@ services:
       - ./config:/app/config
       - /var/run/docker.sock:/var/run/docker.sock
       - /mnt/nvme-storage:/mnt/nvme-storage:ro
+    env_file:
+      - .env
