@@ -8,6 +8,7 @@
 # Homepage
 !homepage/
 homepage/*
+!homepage/compose.yaml
 !homepage/config/
 homepage/config/*
 !homepage/config/*.yaml
