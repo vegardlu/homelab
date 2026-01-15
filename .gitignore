@@ -1,0 +1,29 @@
+*
+
+!.gitignore
+
+!**/compose.yaml
+!**/docker-compose.yml
+
+# Homepage
+!homepage/
+homepage/*
+!homepage/config/
+homepage/config/*
+!homepage/config/*.yaml
+
+# Home Assistant
+!homeassistant/
+homeassistant/*
+!homeassistant/*.yaml
+homeassistant/secrets.yaml
+
+# Cloutflare
+!cloudflare/
+
+# ignore
+.env
+*.log
+*.db
+*.db-shm
+*.db-wal

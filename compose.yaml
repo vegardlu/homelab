@@ -1,0 +1,6 @@
+include:
+  - homeassistant/compose.yaml
+  - cloudflare/compose.yaml
+  - kuma/compose.yaml
+  - homepage/compose.yaml
+  - immich/compose.yaml

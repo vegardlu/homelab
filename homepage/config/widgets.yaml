@@ -1,0 +1,17 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/configs/info-widgets/
+
+- resources:
+    cpu: true
+    memory: true
+
+- resources:
+    disk:
+      - / 
+      - /mnt/nvme-storage
+    expanded: true
+      
+- search:
+    provider: duckduckgo
+    target: _blank

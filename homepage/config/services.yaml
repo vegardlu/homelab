@@ -1,0 +1,19 @@
+- Infrastructure:
+    - Cloudflare:
+        icon: cloudflare.png
+        href: https://dash.cloudflare.com
+        description: Tunnel & DNS
+    - Uptime Kuma:
+        icon: uptime-kuma.png
+        href: https://kuma.lundeberg.cc
+        widget:
+          type: uptimekuma
+          url: http://localhost:3001
+          slug: default
+
+- Automation:
+    - Home Assistant:
+        icon: home-assistant.png
+        href: https://ha.lundeberg.cc
+        description: Smart Home Controller
+        container: homeassistant
