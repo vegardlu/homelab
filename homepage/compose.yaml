@@ -6,7 +6,6 @@ services:
     network_mode: host
     privileged: true
     environment:
-      # Use a comma-separated list with NO SPACES
       - HOMEPAGE_ALLOWED_HOSTS=home.lundeberg.cc,192.168.x.x:3000,localhost:3000
     volumes:
       - ./config:/app/config

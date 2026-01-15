@@ -21,7 +21,7 @@
         container: immich_server
         widget:
           type: immich
-          url: http://localhost:2283
+          url: http://localhost:2283/api
           key: {{HOMEPAGE_VAR_IMMICH_KEY}}
 
 - Automation:
