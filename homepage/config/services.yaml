@@ -3,13 +3,26 @@
         icon: cloudflare.png
         href: https://dash.cloudflare.com
         description: Tunnel & DNS
+        container: cloudflared
     - Uptime Kuma:
         icon: uptime-kuma.png
         href: https://kuma.lundeberg.cc
+        container: uptime-kuma
         widget:
           type: uptimekuma
           url: http://localhost:3001
           slug: default
+
+- Media:
+    - Immich:
+        icon: immich.png
+        href: http://immich.lundeberg.cc
+        description: Photo Backup
+        container: immich_server
+        widget:
+          type: immich
+          url: http://localhost:2283
+          key: {{HOMEPAGE_VAR_IMMICH_KEY}}
 
 - Automation:
     - Home Assistant:
