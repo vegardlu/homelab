@@ -18,8 +18,20 @@ homeassistant/*
 !homeassistant/*.yaml
 homeassistant/secrets.yaml
 
-# Cloutflare
+# Cloudflare
 !cloudflare/
+cloudflare/*
+!cloudflare/compose.yaml
+
+# Immich
+!immich/
+immich/*
+!immich/compose.yaml
+
+# Kuma
+!kuma/
+kuma/*
+!kuma/compose.yaml
 
 # ignore
 .env
