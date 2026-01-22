@@ -119,8 +119,10 @@ services:
     depends_on:
       log:
         condition: service_healthy
-      - postgresql
-      - redis
+      postgresql:
+        condition: service_started
+      redis:
+        condition: service_started
     environment:
       - PORT=8080
       - DATABASE_TYPE=postgresql
@@ -153,8 +155,10 @@ services:
         syslog-address: "udp://127.0.0.1:1514"
         tag: "jobservice"
     depends_on:
-      - core
-      - redis
+      core:
+        condition: service_started
+      redis:
+        condition: service_started
 
   portal:
     image: goharbor/harbor-portal:${HARBOR_VERSION}
@@ -168,7 +172,8 @@ services:
         syslog-address: "udp://127.0.0.1:1514"
         tag: "portal"
     depends_on:
-      - core
+      core:
+        condition: service_started
 
   proxy:
     image: goharbor/nginx-photon:${HARBOR_VERSION}
@@ -186,8 +191,10 @@ services:
         syslog-address: "udp://127.0.0.1:1514"
         tag: "proxy"
     depends_on:
-      - core
-      - portal
+      core:
+        condition: service_started
+      portal:
+        condition: service_started
 
 networks:
   harbor:
