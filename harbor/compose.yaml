@@ -167,6 +167,9 @@ services:
         condition: service_started
       redis:
         condition: service_started
+    environment:
+      - CORE_SECRET=${HARBOR_SECRET_KEY}
+      - JOBSERVICE_SECRET=${HARBOR_SECRET_KEY}
 
   portal:
     image: goharbor/harbor-portal:${HARBOR_VERSION}
