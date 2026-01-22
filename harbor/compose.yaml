@@ -5,7 +5,6 @@ services:
     restart: always
     volumes:
       - ${DATA_VOLUME}/log/:/var/log/docker/
-      - ./syslog:/var/lib/syslog
     healthcheck:
       test: ["CMD-SHELL", "nc -z 127.0.0.1 10514"]
       interval: 10s
