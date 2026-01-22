@@ -61,7 +61,8 @@ services:
     depends_on:
       log:
         condition: service_healthy
-      - registry
+      registry:
+        condition: service_started
 
   postgresql:
     image: goharbor/harbor-db:${HARBOR_VERSION}
