@@ -10,8 +10,7 @@ services:
       interval: 10s
       timeout: 10s
       retries: 5
-    ports:
-      - 127.0.0.1:1514:10514
+
     logging:
       driver: "json-file"
       options:
