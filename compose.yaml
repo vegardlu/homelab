@@ -4,4 +4,3 @@ include:
   - kuma/compose.yaml
   - homepage/compose.yaml
   - immich/compose.yaml
-  - harbor/compose.yaml
