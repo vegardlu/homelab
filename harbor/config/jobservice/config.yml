@@ -1,5 +1,7 @@
 protocol: http
 port: 8080
+secret: "Harbor12345"
+
 worker_pool:
   workers: 10
   backend: "redis"
