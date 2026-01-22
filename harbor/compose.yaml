@@ -7,10 +7,13 @@ services:
       - ${DATA_VOLUME}/log/:/var/log/docker/
       - ./config/log/rsyslog_docker.conf:/etc/rsyslog.d/01-docker.conf:z
     healthcheck:
-      test: ["CMD-SHELL", "nc -z 127.0.0.1 10514"]
+      test: ["CMD-SHELL", "netstat -tuln | grep 10514"]
       interval: 10s
       timeout: 10s
       retries: 5
+    ports:
+      - 127.0.0.1:1514:10514
+      - 127.0.0.1:1514:10514/udp
 
     logging:
       driver: "json-file"
