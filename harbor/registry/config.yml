@@ -1,0 +1,30 @@
+version: 0.1
+log:
+  level: info
+  fields:
+    service: registry
+storage:
+  cache:
+    layerinfo: redis
+  filesystem:
+    rootdirectory: /storage
+  maintenance:
+    uploadpurging:
+      enabled: false
+  delete:
+    enabled: true
+http:
+  addr: :5000
+  secret: "secret123"
+  debug:
+    addr: localhost:5001
+auth:
+  token:
+    realm: http://core:8080/service/token
+    service: harbor-registry
+    issuer: harbor-token-issuer
+    rootcertbundle: /etc/registry/secrets/root.crt
+redis:
+  addr: harbor-redis:6379
+  password: ""
+  db: 0
