@@ -40,3 +40,31 @@ kuma/*
 *.db
 *.db-shm
 *.db-wal
+
+# Agent
+
+!.agent/
+!.agent/rules/
+!.agent/rules/*
+
+
+# Harbor
+!harbor/
+harbor/*
+!harbor/compose.yaml
+!harbor/config/
+harbor/config/*
+!harbor/config/*/
+!harbor/config/**/*.yaml
+!harbor/config/**/*.yml
+!harbor/config/**/*.conf
+!harbor/registry/
+harbor/registry/*
+!harbor/registry/*.yml
+!harbor/setup.sh
+
+# Harbor Secrets & Data
+harbor/secret/
+harbor/redis/
+harbor/database/
+harbor/registry/data/

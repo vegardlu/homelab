@@ -16,7 +16,7 @@
 - Media:
     - Immich:
         icon: immich.png
-        href: http://immich.lundeberg.cc
+        href: https://immich.lundeberg.cc
         description: Photo Backup
         container: immich_server
 

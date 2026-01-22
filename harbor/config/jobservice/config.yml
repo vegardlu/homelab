@@ -1,0 +1,22 @@
+protocol: http
+port: 8080
+worker_pool:
+  workers: 10
+  backend: "redis"
+  redis_pool:
+    redis_url: "redis://redis:6379/1"
+    namespace: "harbor_job_service_namespace"
+job_loggers:
+  - name: "STD_OUTPUT"
+    level: INFO
+  - name: "FILE"
+    level: INFO
+    settings: # Log file path in container
+      base_dir: "/var/log/jobs"
+    sweeper:
+      duration: 1 # days
+      settings:
+        work_dir: "/var/log/jobs"
+loggers:
+  - name: "STD_OUTPUT"
+    level: INFO
