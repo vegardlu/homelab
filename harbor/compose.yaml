@@ -134,6 +134,7 @@ services:
       - POSTGRESQL_USERNAME=postgres
       - POSTGRESQL_PASSWORD=${HARBOR_DB_PASSWORD}
       - REDIS_URL=redis://redis:6379/0
+      - _REDIS_URL_CORE=redis://redis:6379/0
       - SYSLOG_URL=udp://log:1514
       - SYSLOG_TAG=core
       - EXT_ENDPOINT=${EXT_ENDPOINT}
