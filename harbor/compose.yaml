@@ -71,11 +71,7 @@ services:
       - JOBSERVICE_SECRET=${HARBOR_SECRET_KEY}
       - REGISTRY_CONFIG=/etc/registry/config.yml
       - REGISTRY_URL=http://registry:5000
-    environment:
-      - CORE_SECRET=${HARBOR_SECRET_KEY}
-      - JOBSERVICE_SECRET=${HARBOR_SECRET_KEY}
-      - REGISTRY_CONFIG=/etc/registry/config.yml
-      - REGISTRY_URL=http://registry:5000
+
 
   postgresql:
     image: goharbor/harbor-db:${HARBOR_VERSION}
