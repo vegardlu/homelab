@@ -25,6 +25,6 @@ auth:
     issuer: harbor-token-issuer
     rootcertbundle: /etc/registry/secrets/root.crt
 redis:
-  addr: harbor-redis:6379
+  addr: redis:6379
   password: ""
   db: 0
