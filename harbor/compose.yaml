@@ -52,6 +52,7 @@ services:
     volumes:
       - ${DATA_VOLUME}/registry:/storage:z
       - ./registry/:/etc/registryctl/:z
+      - ./registry/:/etc/registry/:z
       - ./secret/registry:/etc/registry/secrets/:z
     networks:
       - harbor
