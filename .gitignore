@@ -73,3 +73,8 @@ harbor/registry/data/
 !lundedev-core/
 lundedev-core/*
 !lundedev-core/compose.yaml
+
+# Lundedev Hjem
+!lundedev-hjem/
+lundedev-hjem/*
+!lundedev-hjem/compose.yaml

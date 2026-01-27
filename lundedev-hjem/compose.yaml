@@ -1,0 +1,9 @@
+services:
+  lundedev-hjem:
+    image: vegardlu/lundedev-hjem:latest
+    container_name: lundedev-hjem
+    restart: unless-stopped
+    ports:
+      - "3005:3000"
+    env_file:
+      - .env
