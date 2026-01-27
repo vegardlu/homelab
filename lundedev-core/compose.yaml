@@ -1,0 +1,11 @@
+name: lundedev-core
+
+services:
+  app:
+    container_name: lundedev-core
+    image: vegardlu/lundedev-core:latest@sha256:271955c07773bd041006bdbffcb6c201d8713fb9251b14ba24c13cb1f4da61b8
+    restart: unless-stopped
+    env_file:
+      - .env
+    ports:
+      - "8085:8080"

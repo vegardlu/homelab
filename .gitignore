@@ -68,3 +68,8 @@ harbor/secret/
 harbor/redis/
 harbor/database/
 harbor/registry/data/
+
+# Lundedev Core
+!lundedev-core/
+lundedev-core/*
+!lundedev-core/compose.yaml
