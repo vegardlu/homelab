@@ -78,3 +78,6 @@ lundedev-core/*
 !lundedev-hjem/
 lundedev-hjem/*
 !lundedev-hjem/compose.yaml
+
+# GCP
+gcp-credentials.json
