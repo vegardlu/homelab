@@ -34,6 +34,9 @@ immich/*
 kuma/*
 !kuma/compose.yaml
 
+# Scripts
+!update.fish
+
 # ignore
 .env
 *.log
