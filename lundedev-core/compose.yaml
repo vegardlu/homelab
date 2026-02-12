@@ -13,7 +13,7 @@ services:
       - "host.docker.internal:host-gateway"
     environment:
       - GOOGLE_APPLICATION_CREDENTIALS=/app/gcp-credentials.json
-      - ALLOWED_CLIENT_IDS=${GOOGLE_CLIENT_ID}
+      - ALLOWED_CLIENT_IDS=${GOOGLE_CLIENT_ID},24378730141-phk5mqttq5k6qefs2fcp34o3k2aqou3c.apps.googleusercontent.com
       - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
       - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
     volumes:
