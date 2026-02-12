@@ -9,3 +9,5 @@ services:
     restart: unless-stopped
     privileged: true
     network_mode: host
+    devices:
+      - /dev/serial/by-id/usb-Itead_Sonoff_Zigbee_3.0_USB_Dongle_Plus_V2_4a6a62b638f4ef118e33c41b6d9880ab-if00-port0:/dev/ttyUSB0
