@@ -14,5 +14,7 @@ services:
     environment:
       - GOOGLE_APPLICATION_CREDENTIALS=/app/gcp-credentials.json
       - ALLOWED_CLIENT_IDS=${GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
+      - GOOGLE_CLIENT_SECRET=${GOOGLE_CLIENT_SECRET}
     volumes:
       - ./gcp-credentials.json:/app/gcp-credentials.json:ro
