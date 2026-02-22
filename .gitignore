@@ -48,6 +48,7 @@ kuma/*
 !postgres/
 postgres/*
 !postgres/compose.yaml
+!postgres/*.sh
 
 # Agent
 
