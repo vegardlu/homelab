@@ -44,6 +44,11 @@ kuma/*
 *.db-shm
 *.db-wal
 
+# Postgres
+!postgres/
+postgres/*
+!postgres/compose.yaml
+
 # Agent
 
 !.agent/
