@@ -6,3 +6,4 @@ include:
   - immich/compose.yaml
   - lundedev-core/compose.yaml
   - lundedev-hjem/compose.yaml
+  - postgres/compose.yaml
