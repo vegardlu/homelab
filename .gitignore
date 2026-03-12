@@ -95,3 +95,9 @@ lundedev-random-mcp/*
 
 # GCP
 gcp-credentials.json
+# Cue
+!cue/
+cue/*
+!cue/compose.yaml
+!cue/nginx.conf
+!cue/*.sh
