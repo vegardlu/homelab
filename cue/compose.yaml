@@ -12,7 +12,7 @@ services:
       - "host.docker.internal:host-gateway"
     environment:
       - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
-      - ALLOWED_CLIENT_IDS=${GOOGLE_CLIENT_ID}
+      - ALLOWED_CLIENT_IDS=${GOOGLE_CLIENT_ID},24378730141-5426vb9i4vnbat2qierqk5pbu2esggoe.apps.googleusercontent.com,24378730141-aqm0c3p3s97vs1p5skith8do4ob8thho.apps.googleusercontent.com,cc.lundeberg.cue.web,cc.lundeberg.cue-ios,cc.lundeberg.cue-ios.dev
       - DATABASE_URL=jdbc:postgresql://host.docker.internal:5432/cue
       - DATABASE_USERNAME=${DATABASE_USERNAME}
       - DATABASE_PASSWORD=${DATABASE_PASSWORD}
@@ -33,7 +33,7 @@ services:
       - "host.docker.internal:host-gateway"
     environment:
       - GOOGLE_CLIENT_ID=${GOOGLE_CLIENT_ID}
-      - ALLOWED_CLIENT_IDS=${GOOGLE_CLIENT_ID}
+      - ALLOWED_CLIENT_IDS=${GOOGLE_CLIENT_ID},24378730141-5426vb9i4vnbat2qierqk5pbu2esggoe.apps.googleusercontent.com,24378730141-aqm0c3p3s97vs1p5skith8do4ob8thho.apps.googleusercontent.com,cc.lundeberg.cue.web,cc.lundeberg.cue-ios,cc.lundeberg.cue-ios.dev
       - DATABASE_URL=jdbc:postgresql://host.docker.internal:5432/cue
       - DATABASE_USERNAME=${DATABASE_USERNAME}
       - DATABASE_PASSWORD=${DATABASE_PASSWORD}
