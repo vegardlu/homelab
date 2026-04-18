@@ -1,0 +1,575 @@
+- id: '1768858563688'
+  name: TV Stua sove
+  entities:
+    light.tv_stua:
+      supported_color_modes:
+      - brightness
+      color_mode:
+      brightness:
+      is_hue_group: true
+      hue_scenes:
+      - Bright
+      - Rest
+      - Read
+      - Nightlight
+      - Dimmed
+      - Relax
+      hue_type: room
+      lights:
+      - Taklampe TV-stua
+      entity_id:
+      - light.taklampe_tv_stua
+      dynamics: false
+      icon: mdi:lightbulb-group
+      friendly_name: TV Stua
+      supported_features: 40
+      state: 'off'
+    light.spotter_1_etg_utebelysning:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 4000
+      min_mireds: 250
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      friendly_name: Spotter 1 etg - Utebelysning
+      supported_features: 0
+      state: 'off'
+    light.spotter_gang_1_etg_oppholdsrom:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 5.1
+      friendly_name: Spotter gang 1 etg - Oppholdsrom
+      supported_features: 0
+      state: 'on'
+    light.spotter_bad_1_etg_bad:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 5.1
+      friendly_name: Spotter bad 1 etg - Bad
+      supported_features: 0
+      state: 'on'
+    light.spotter_kjokken_oppholdsrom:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 17.85
+      icon: mdi:food
+      friendly_name: Spotter Kjøkken
+      supported_features: 0
+      state: 'on'
+    light.spotter_stue_2_etg_oppholdsrom:
+      supported_color_modes:
+      - brightness
+      color_mode:
+      brightness:
+      friendly_name: Spotter stue 2 etg - Oppholdsrom
+      supported_features: 0
+      state: 'off'
+    light.overskap_kjokken_oppholdsrom:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 17.85
+      friendly_name: Overskap kjøkken - Oppholdsrom
+      supported_features: 0
+      state: 'on'
+    light.soverom_hoyre_soverom:
+      supported_color_modes:
+      - brightness
+      color_mode:
+      brightness:
+      friendly_name: Spotter Kontoret
+      supported_features: 0
+      state: 'off'
+    light.soverom_venstre_soverom:
+      supported_color_modes:
+      - brightness
+      color_mode:
+      brightness:
+      friendly_name: Spotter Barnerom
+      supported_features: 0
+      state: 'off'
+    cover.new_device:
+      assumed_state: true
+      device_class: blind
+      friendly_name: TV-Stua Plisegardin
+      supported_features: 11
+      state: unknown
+    light.hue_tento_color_panel_1:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 13
+      color_temp_kelvin: 2915
+      color_temp: 343
+      hs_color:
+      - 27.971
+      - 59.254
+      rgb_color:
+      - 255
+      - 174
+      - 104
+      xy_color:
+      - 0.504
+      - 0.384
+      mode: normal
+      dynamics: none
+      friendly_name: Stuelys - Soffa
+      supported_features: 40
+      state: 'on'
+    light.dining_table:
+      min_color_temp_kelvin: 1000
+      max_color_temp_kelvin: 20000
+      min_mireds: 50
+      max_mireds: 1000
+      effect_list:
+      - 'off'
+      - candle
+      - fire
+      - prism
+      - sparkle
+      - opal
+      - glisten
+      - underwater
+      - cosmos
+      - sunbeam
+      - enchant
+      - sunrise
+      - sunset
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect: 'off'
+      color_mode: xy
+      brightness: 13
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 44.118
+      - 40
+      rgb_color:
+      - 255
+      - 228
+      - 153
+      xy_color:
+      - 0.413
+      - 0.404
+      mode: normal
+      dynamics: none
+      friendly_name: Dining table
+      supported_features: 44
+      state: 'on'
+  icon: mdi:sleep
+  metadata: {}
+- id: '1769789365340'
+  name: Sove soverom
+  entities:
+    light.spotter_1_etg_utebelysning:
+      min_color_temp_kelvin: 2202
+      max_color_temp_kelvin: 4000
+      min_mireds: 250
+      max_mireds: 454
+      supported_color_modes:
+      - color_temp
+      color_mode: color_temp
+      brightness: 117.3
+      color_temp_kelvin: 2702
+      color_temp: 370
+      hs_color:
+      - 28.391
+      - 65.659
+      rgb_color:
+      - 255
+      - 167
+      - 88
+      xy_color:
+      - 0.524
+      - 0.388
+      friendly_name: Spotter 1 etg - Utebelysning
+      supported_features: 0
+      state: 'on'
+    light.spotter_gang_1_etg_oppholdsrom:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 255
+      friendly_name: Spotter gang 1 etg - Oppholdsrom
+      supported_features: 0
+      state: 'on'
+    light.spotter_bad_1_etg_bad:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 255
+      friendly_name: Spotter bad 1 etg - Bad
+      supported_features: 0
+      state: 'on'
+    light.spotter_kjokken_oppholdsrom:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 255
+      icon: mdi:food
+      friendly_name: Spotter Kjøkken
+      supported_features: 0
+      state: 'on'
+    light.spotter_stue_2_etg_oppholdsrom:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 255
+      friendly_name: Spotter stue 2 etg - Oppholdsrom
+      supported_features: 0
+      state: 'on'
+    light.overskap_kjokken_oppholdsrom:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 255
+      friendly_name: Overskap kjøkken - Oppholdsrom
+      supported_features: 0
+      state: 'on'
+    light.soverom_hoyre_soverom:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 255
+      friendly_name: Spotter Kontoret
+      supported_features: 0
+      state: 'on'
+    light.soverom_venstre_soverom:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 255
+      friendly_name: Spotter Barnerom
+      supported_features: 0
+      state: 'on'
+    cover.pleated_blind:
+      assumed_state: true
+      device_class: blind
+      friendly_name: Soverom Plissegardin
+      supported_features: 11
+      state: unknown
+    light.hue_beyond_down_1:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      mode: normal
+      dynamics: none
+      friendly_name: Hue beyond down 1
+      supported_features: 40
+      state: 'off'
+    light.hue_beyond_up_1:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode:
+      brightness:
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      rgb_color:
+      xy_color:
+      mode: normal
+      dynamics: none
+      friendly_name: Hue beyond up 1
+      supported_features: 40
+      state: 'off'
+    light.hue_filament_bulb_1:
+      effect_list:
+      - 'off'
+      - candle
+      supported_color_modes:
+      - brightness
+      effect:
+      color_mode:
+      brightness:
+      mode: normal
+      dynamics: none
+      friendly_name: Hue filament bulb 1
+      supported_features: 44
+      state: 'off'
+    light.hue_infuse_ceiling_1:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - 'off'
+      - candle
+      - fire
+      - prism
+      - sparkle
+      - opal
+      - glisten
+      - underwater
+      - cosmos
+      - sunbeam
+      - enchant
+      - sunrise
+      - sunset
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect: 'off'
+      color_mode: color_temp
+      brightness: 13
+      color_temp_kelvin: 2732
+      color_temp: 366
+      hs_color:
+      - 28.327
+      - 64.71
+      rgb_color:
+      - 255
+      - 168
+      - 90
+      xy_color:
+      - 0.522
+      - 0.387
+      mode: normal
+      dynamics: none
+      friendly_name: Hue Infuse ceiling 1
+      supported_features: 44
+      state: 'on'
+    light.dining_table:
+      min_color_temp_kelvin: 1000
+      max_color_temp_kelvin: 20000
+      min_mireds: 50
+      max_mireds: 1000
+      effect_list:
+      - 'off'
+      - candle
+      - fire
+      - prism
+      - sparkle
+      - opal
+      - glisten
+      - underwater
+      - cosmos
+      - sunbeam
+      - enchant
+      - sunrise
+      - sunset
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect: 'off'
+      color_mode: xy
+      brightness: 13
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 243.673
+      - 38.431
+      rgb_color:
+      - 163
+      - 157
+      - 255
+      xy_color:
+      - 0.247
+      - 0.203
+      mode: normal
+      dynamics: none
+      friendly_name: Dining table
+      supported_features: 44
+      state: 'on'
+    light.hue_tento_color_panel_1:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 13
+      color_temp_kelvin: 2915
+      color_temp: 343
+      hs_color:
+      - 27.971
+      - 59.254
+      rgb_color:
+      - 255
+      - 174
+      - 104
+      xy_color:
+      - 0.504
+      - 0.384
+      mode: normal
+      dynamics: none
+      friendly_name: Stuelys - Soffa
+      supported_features: 40
+      state: 'on'
+  icon: mdi:sleep
+  metadata: {}
+- id: '1769791026219'
+  name: Lys i huset
+  entities:
+    light.dining_table:
+      min_color_temp_kelvin: 1000
+      max_color_temp_kelvin: 20000
+      min_mireds: 50
+      max_mireds: 1000
+      effect_list:
+      - 'off'
+      - candle
+      - fire
+      - prism
+      - sparkle
+      - opal
+      - glisten
+      - underwater
+      - cosmos
+      - sunbeam
+      - enchant
+      - sunrise
+      - sunset
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect: 'off'
+      color_mode: xy
+      brightness: 130
+      color_temp_kelvin:
+      color_temp:
+      hs_color:
+      - 27.835
+      - 76.078
+      rgb_color:
+      - 255
+      - 151
+      - 61
+      xy_color:
+      - 0.564
+      - 0.385
+      mode: normal
+      dynamics: none
+      friendly_name: Dining table
+      supported_features: 44
+      state: 'on'
+    light.spotter_stue_2_etg_oppholdsrom:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 206.55
+      friendly_name: Spotter stue 2 etg - Oppholdsrom
+      supported_features: 0
+      state: 'on'
+    light.spotter_kjokken_oppholdsrom:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 206.55
+      icon: mdi:food
+      friendly_name: Spotter Kjøkken
+      supported_features: 0
+      state: 'on'
+    light.overskap_kjokken_oppholdsrom:
+      supported_color_modes:
+      - brightness
+      color_mode: brightness
+      brightness: 206.55
+      friendly_name: Overskap kjøkken - Oppholdsrom
+      supported_features: 0
+      state: 'on'
+    light.hue_tento_color_panel_1:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      supported_color_modes:
+      - color_temp
+      - xy
+      color_mode: color_temp
+      brightness: 207
+      color_temp_kelvin: 2915
+      color_temp: 343
+      hs_color:
+      - 27.971
+      - 59.254
+      rgb_color:
+      - 255
+      - 174
+      - 104
+      xy_color:
+      - 0.504
+      - 0.384
+      mode: normal
+      dynamics: none
+      friendly_name: Stuelys - Soffa
+      supported_features: 40
+      state: 'on'
+    light.hue_infuse_ceiling_1:
+      min_color_temp_kelvin: 2000
+      max_color_temp_kelvin: 6535
+      min_mireds: 153
+      max_mireds: 500
+      effect_list:
+      - 'off'
+      - candle
+      - fire
+      - prism
+      - sparkle
+      - opal
+      - glisten
+      - underwater
+      - cosmos
+      - sunbeam
+      - enchant
+      - sunrise
+      - sunset
+      supported_color_modes:
+      - color_temp
+      - xy
+      effect: 'off'
+      color_mode: color_temp
+      brightness: 201
+      color_temp_kelvin: 2732
+      color_temp: 366
+      hs_color:
+      - 28.327
+      - 64.71
+      rgb_color:
+      - 255
+      - 168
+      - 90
+      xy_color:
+      - 0.522
+      - 0.387
+      mode: normal
+      dynamics: none
+      friendly_name: Hue Infuse ceiling 1
+      supported_features: 44
+      state: 'on'
+  icon: mdi:lightbulb-multiple
+  metadata: {}

@@ -1,0 +1,51 @@
+- id: '1768362630430'
+  alias: Soverom plissegardin åpne
+  description: ''
+  triggers:
+  - trigger: time
+    at: 09:30:00
+    weekday:
+    - sat
+  conditions: []
+  actions:
+  - action: cover.open_cover
+    metadata: {}
+    target:
+      entity_id: cover.pleated_blind
+    data: {}
+  mode: single
+- id: '1769460312280'
+  alias: Hue button 4
+  description: ''
+  triggers:
+  - device_id: ba2c0d29a2d213c3c968663d807d4d0a
+    domain: hue
+    type: initial_press
+    subtype: 4
+    unique_id: 4e67ef95-6c0c-4973-be0d-a52f6e9b36ce
+    trigger: device
+  conditions: []
+  actions:
+  - action: light.toggle
+    metadata: {}
+    target:
+      entity_id:
+      - light.taklampe_tv_stua
+      - light.spotter_1_etg_utebelysning
+    data: {}
+  mode: single
+- id: '1770926356697'
+  alias: 'Plante: Varsel ved lav fuktighet'
+  description: ''
+  triggers:
+  - entity_id: sensor.palme_soil_moisture
+    below: 35
+    trigger: numeric_state
+  conditions: []
+  actions:
+  - data:
+      title: "Tørst palme! \U0001FAB4"
+      message: Gullpalmen vår er nede i {{ states('sensor.palme_soil_moisture') }}%.
+        På tide med litt vann!
+    action: notify.mobile_app_iphone_15_pro_vegard
+  mode: single

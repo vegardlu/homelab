@@ -17,7 +17,13 @@ homepage/config/*
 !homeassistant/
 homeassistant/*
 !homeassistant/*.yaml
-homeassistant/secrets.yaml
+!homeassistant/config/
+homeassistant/config/*
+!homeassistant/config/*.yaml
+!homeassistant/config/blueprints/
+!homeassistant/config/blueprints/*/
+!homeassistant/config/blueprints/**/*.yaml
+homeassistant/config/secrets.yaml
 
 # Cloudflare
 !cloudflare/
