@@ -49,3 +49,23 @@
         På tide med litt vann!
     action: notify.mobile_app_iphone_15_pro_vegard
   mode: single
+- id: '1776700000000'
+  alias: Garasjedør åpen varsel
+  description: Send varsel hvis garasjedøren har vært åpen i 1 time
+  triggers:
+  - trigger: state
+    entity_id: cover.garasjedor
+    to: open
+    for:
+      hours: 1
+  conditions: []
+  actions:
+  - data:
+      title: Garasjedør fortsatt åpen
+      message: Garasjedøren har vært åpen i 1 time.
+    action: notify.mobile_app_iphone_15_pro_vegard
+  - data:
+      title: Garasjedør fortsatt åpen
+      message: Garasjedøren har vært åpen i 1 time.
+    action: notify.mobile_app_iphone
+  mode: single
