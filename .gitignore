@@ -94,11 +94,6 @@ lundedev-core/*
 lundedev-hjem/*
 !lundedev-hjem/compose.yaml
 
-# Lundedev Random MCP
-!lundedev-random-mcp/
-lundedev-random-mcp/*
-!lundedev-random-mcp/compose.yaml
-
 # GCP
 gcp-credentials.json
 # Cue

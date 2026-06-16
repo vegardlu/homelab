@@ -7,5 +7,4 @@ include:
   - lundedev-core/compose.yaml
   - lundedev-hjem/compose.yaml
   - postgres/compose.yaml
-  - lundedev-random-mcp/compose.yaml
   - cue/compose.yaml

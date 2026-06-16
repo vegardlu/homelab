@@ -1,9 +1,0 @@
-services:
-  lundedev-random-mcp:
-    image: vegardlu/lundedev-random-mcp:latest
-    container_name: lundedev-random-mcp
-    restart: unless-stopped
-    ports:
-      - "8087:8087"
-    environment:
-      - TZ=Europe/Oslo
