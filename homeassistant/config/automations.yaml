@@ -48,6 +48,31 @@
       message: Gullpalmen vår er nede i {{ states('sensor.palme_soil_moisture') }}%.
         På tide med litt vann!
     action: notify.mobile_app_iphone_15_pro_vegard
+  - data:
+      title: "Tørst palme! \U0001FAB4"
+      message: Gullpalmen vår er nede i {{ states('sensor.palme_soil_moisture') }}%.
+        På tide med litt vann!
+    action: notify.mobile_app_iphone
+  mode: single
+- id: '1770926356698'
+  alias: 'Sitronplante: Varsel ved lav fuktighet'
+  description: ''
+  triggers:
+  - entity_id: sensor.sitronplante_soil_moisture
+    below: 35
+    trigger: numeric_state
+  conditions: []
+  actions:
+  - data:
+      title: "Tørst sitronplante! \U0001F34B"
+      message: Sitronplanten vår er nede i {{ states('sensor.sitronplante_soil_moisture')
+        }}%. På tide med litt vann!
+    action: notify.mobile_app_iphone_15_pro_vegard
+  - data:
+      title: "Tørst sitronplante! \U0001F34B"
+      message: Sitronplanten vår er nede i {{ states('sensor.sitronplante_soil_moisture')
+        }}%. På tide med litt vann!
+    action: notify.mobile_app_iphone
   mode: single
 - id: '1776700000000'
   alias: Garasjedør åpen varsel
