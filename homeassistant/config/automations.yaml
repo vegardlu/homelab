@@ -74,6 +74,48 @@
         }}%. På tide med litt vann!
     action: notify.mobile_app_iphone
   mode: single
+- id: '1770926356699'
+  alias: 'Plante: PANIKK ved kritisk fuktighet'
+  description: ''
+  triggers:
+  - entity_id: sensor.palme_soil_moisture
+    below: 10
+    trigger: numeric_state
+  conditions: []
+  actions:
+  - data:
+      title: "\U0001F198 PALME-ALARM!"
+      message: KODE RØD! Palmen er nede i {{ states('sensor.palme_soil_moisture') }}%
+        og har begynt å skrive testamente. Grip vannkanna FØR det er for sent! 🚑🌴
+    action: notify.mobile_app_iphone_15_pro_vegard
+  - data:
+      title: "\U0001F198 PALME-ALARM!"
+      message: KODE RØD! Palmen er nede i {{ states('sensor.palme_soil_moisture') }}%
+        og har begynt å skrive testamente. Grip vannkanna FØR det er for sent! 🚑🌴
+    action: notify.mobile_app_iphone
+  mode: single
+- id: '1770926356700'
+  alias: 'Sitronplante: PANIKK ved kritisk fuktighet'
+  description: ''
+  triggers:
+  - entity_id: sensor.sitronplante_soil_moisture
+    below: 10
+    trigger: numeric_state
+  conditions: []
+  actions:
+  - data:
+      title: "\U0001F198 SITRON-SOS!"
+      message: PANIKK PÅ VINDUSKARMEN! Sitronplanten er på {{ states('sensor.sitronplante_soil_moisture')
+        }}% og lager snart rosiner i stedet for sitroner. Vann NÅ, ellers blir det
+        ingen gin og tonic! 🍋🚱
+    action: notify.mobile_app_iphone_15_pro_vegard
+  - data:
+      title: "\U0001F198 SITRON-SOS!"
+      message: PANIKK PÅ VINDUSKARMEN! Sitronplanten er på {{ states('sensor.sitronplante_soil_moisture')
+        }}% og lager snart rosiner i stedet for sitroner. Vann NÅ, ellers blir det
+        ingen gin og tonic! 🍋🚱
+    action: notify.mobile_app_iphone
+  mode: single
 - id: '1776700000000'
   alias: Garasjedør åpen varsel
   description: Send varsel hvis garasjedøren har vært åpen i 1 time
