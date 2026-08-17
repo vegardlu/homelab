@@ -143,6 +143,16 @@
     after: '07:00:00'
     before: '22:00:00'
   actions:
+  - data:
+      title: "\U0001F4A7 Vanner sitronplanten"
+      message: Jorda er nede i {{ states('sensor.sitronplante_soil_moisture') }}%.
+        Starter vanning, og holder på til den er over 55%.
+    action: notify.mobile_app_iphone_15_pro_vegard
+  - data:
+      title: "\U0001F4A7 Vanner sitronplanten"
+      message: Jorda er nede i {{ states('sensor.sitronplante_soil_moisture') }}%.
+        Starter vanning, og holder på til den er over 55%.
+    action: notify.mobile_app_iphone
   - repeat:
       sequence:
       - action: switch.turn_on
