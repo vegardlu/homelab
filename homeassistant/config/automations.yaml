@@ -128,8 +128,10 @@
 - id: '1786838400000'
   alias: 'Vidjeveien: Auto-vanning sitronplante'
   description: Vanner sitronplanten i små doser til jorda er over 60%, og lar den
-    så tørke ned til 35% igjen. En numeric_state-trigger utløses bare når verdien
-    krysser grensa, så syklusen armerer seg selv.
+    så tørke ned til 35% igjen. Grensene følger plantas egen målte rytme — den tørker
+    rundt 6 prosentpoeng i døgnet, så bandet gir vanning omtrent hver fjerde dag,
+    slik den har blitt vannet for hånd hele sommeren. En numeric_state-trigger utløses
+    bare når verdien krysser grensa, så syklusen armerer seg selv.
   triggers:
   - entity_id: sensor.sitronplante_soil_moisture
     below: 35
