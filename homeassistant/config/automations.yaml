@@ -54,26 +54,6 @@
         tide med litt vann!
     action: notify.mobile_app_iphone
   mode: single
-- id: '1770926356698'
-  alias: 'Sitronplante: Varsel ved lav fuktighet'
-  description: ''
-  triggers:
-  - entity_id: sensor.sitronplante_soil_moisture
-    below: 35
-    trigger: numeric_state
-  conditions: []
-  actions:
-  - data:
-      title: "Tørst sitronplante! \U0001F34B"
-      message: Sitronplanten vår er nede i {{ states('sensor.sitronplante_soil_moisture')
-        }}%. På tide med litt vann!
-    action: notify.mobile_app_iphone_15_pro_vegard
-  - data:
-      title: "Tørst sitronplante! \U0001F34B"
-      message: Sitronplanten vår er nede i {{ states('sensor.sitronplante_soil_moisture')
-        }}%. På tide med litt vann!
-    action: notify.mobile_app_iphone
-  mode: single
 - id: '1770926356699'
   alias: 'Plante: PANIKK ved kritisk fuktighet'
   description: ''
@@ -95,25 +75,34 @@
     action: notify.mobile_app_iphone
   mode: single
 - id: '1770926356700'
-  alias: 'Sitronplante: PANIKK ved kritisk fuktighet'
-  description: ''
+  alias: 'Sitronplante: Auto-vanning virker ikke'
+  description: Jorda holder seg kritisk tørr selv om pumpa har gått. Da er noe fysisk
+    galt — tom beholder, tett filter eller et dryppspyd som har hoppet ut av potta.
   triggers:
   - entity_id: sensor.sitronplante_soil_moisture
-    below: 10
+    below: 20
+    for: '02:00:00'
     trigger: numeric_state
-  conditions: []
+  conditions:
+  - condition: not
+    conditions:
+    - condition: state
+      entity_id: switch.third_reality_inc_3rwk0148z
+      state: 'off'
+      for:
+        hours: 6
   actions:
   - data:
       title: "\U0001F198 SITRON-SOS!"
-      message: PANIKK PÅ VINDUSKARMEN! Sitronplanten er på {{ states('sensor.sitronplante_soil_moisture')
-        }}% og lager snart rosiner i stedet for sitroner. Vann NÅ, ellers blir det
-        ingen gin og tonic! 🍋🚱
+      message: Sitronplanten er på {{ states('sensor.sitronplante_soil_moisture') }}%
+        etter to timer, selv om vanningen har gått. Sjekk vannbeholder, filter og
+        at dryppspydet står i potta. 🍋🚱
     action: notify.mobile_app_iphone_15_pro_vegard
   - data:
       title: "\U0001F198 SITRON-SOS!"
-      message: PANIKK PÅ VINDUSKARMEN! Sitronplanten er på {{ states('sensor.sitronplante_soil_moisture')
-        }}% og lager snart rosiner i stedet for sitroner. Vann NÅ, ellers blir det
-        ingen gin og tonic! 🍋🚱
+      message: Sitronplanten er på {{ states('sensor.sitronplante_soil_moisture') }}%
+        etter to timer, selv om vanningen har gått. Sjekk vannbeholder, filter og
+        at dryppspydet står i potta. 🍋🚱
     action: notify.mobile_app_iphone
   mode: single
 - id: '1776700000000'
@@ -134,5 +123,108 @@
   - data:
       title: Garasjedør fortsatt åpen
       message: Garasjedøren har vært åpen i 1 time.
+    action: notify.mobile_app_iphone
+  mode: single
+- id: '1786838400000'
+  alias: 'Vidjeveien: Auto-vanning sitronplante'
+  description: Vanner sitronplanten i små doser til jorda er over 55%, og lar den
+    så tørke ned til 35% igjen. En numeric_state-trigger utløses bare når verdien
+    krysser grensa, så syklusen armerer seg selv.
+  triggers:
+  - entity_id: sensor.sitronplante_soil_moisture
+    below: 35
+    for: '00:30:00'
+    trigger: numeric_state
+  conditions:
+  - condition: state
+    entity_id: binary_sensor.third_reality_inc_3rwk0148z_moisture
+    state: 'off'
+  - condition: time
+    after: '07:00:00'
+    before: '22:00:00'
+  actions:
+  - repeat:
+      sequence:
+      - action: switch.turn_on
+        target:
+          entity_id: switch.third_reality_inc_3rwk0148z
+      - delay:
+          seconds: >-
+            {{ (states('number.third_reality_inc_3rwk0148z_water_duration')
+            | float(10) | round(0) | int) + 30 }}
+      - action: switch.turn_off
+        target:
+          entity_id: switch.third_reality_inc_3rwk0148z
+      - delay: '00:10:00'
+      until:
+      - condition: or
+        conditions:
+        - condition: numeric_state
+          entity_id: sensor.sitronplante_soil_moisture
+          above: 55
+        - condition: template
+          value_template: '{{ repeat.index >= 6 }}'
+        - condition: state
+          entity_id: binary_sensor.third_reality_inc_3rwk0148z_moisture
+          state: 'on'
+  - if:
+    - condition: numeric_state
+      entity_id: sensor.sitronplante_soil_moisture
+      below: 55
+    then:
+    - data:
+        title: "\U0001F4A7 Vanningen når ikke målet"
+        message: Sitronplanten står fortsatt på {{ states('sensor.sitronplante_soil_moisture')
+          }}% etter maks antall doser. Sjekk vannbeholder, filter og at dryppspydet
+          står i potta.
+      action: notify.mobile_app_iphone_15_pro_vegard
+    - data:
+        title: "\U0001F4A7 Vanningen når ikke målet"
+        message: Sitronplanten står fortsatt på {{ states('sensor.sitronplante_soil_moisture')
+          }}% etter maks antall doser. Sjekk vannbeholder, filter og at dryppspydet
+          står i potta.
+      action: notify.mobile_app_iphone
+  mode: single
+  max_exceeded: silent
+- id: '1786838400001'
+  alias: 'Vidjeveien: Tom vannbeholder'
+  description: Vanningssystemet melder vannmangel eller blokkert slange.
+  triggers:
+  - entity_id: binary_sensor.third_reality_inc_3rwk0148z_moisture
+    to: 'on'
+    for: '00:02:00'
+    trigger: state
+  conditions: []
+  actions:
+  - data:
+      title: "\U0001F6B1 Tom vannbeholder"
+      message: Vidjeveien irrigation system melder vannmangel. Sitronplanten får ikke
+        mer vann før beholderen er fylt opp igjen.
+    action: notify.mobile_app_iphone_15_pro_vegard
+  - data:
+      title: "\U0001F6B1 Tom vannbeholder"
+      message: Vidjeveien irrigation system melder vannmangel. Sitronplanten får ikke
+        mer vann før beholderen er fylt opp igjen.
+    action: notify.mobile_app_iphone
+  mode: single
+- id: '1786838400002'
+  alias: 'Vidjeveien: Lavt batteri'
+  description: Fanger også opp at USB-C-kabelen har falt ut, siden systemet da faller
+    tilbake på batteriene.
+  triggers:
+  - entity_id: sensor.third_reality_inc_3rwk0148z_battery
+    below: 20
+    trigger: numeric_state
+  conditions: []
+  actions:
+  - data:
+      title: "\U0001F50B Lavt batteri på vanningen"
+      message: Vidjeveien irrigation system er nede i {{ states('sensor.third_reality_inc_3rwk0148z_battery')
+        }}%. Bytt batterier, eller sjekk at USB-C-kabelen sitter i.
+    action: notify.mobile_app_iphone_15_pro_vegard
+  - data:
+      title: "\U0001F50B Lavt batteri på vanningen"
+      message: Vidjeveien irrigation system er nede i {{ states('sensor.third_reality_inc_3rwk0148z_battery')
+        }}%. Bytt batterier, eller sjekk at USB-C-kabelen sitter i.
     action: notify.mobile_app_iphone
   mode: single
