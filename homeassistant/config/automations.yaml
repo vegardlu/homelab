@@ -127,7 +127,7 @@
   mode: single
 - id: '1786838400000'
   alias: 'Vidjeveien: Auto-vanning sitronplante'
-  description: Vanner sitronplanten i små doser til jorda er over 55%, og lar den
+  description: Vanner sitronplanten i små doser til jorda er over 60%, og lar den
     så tørke ned til 35% igjen. En numeric_state-trigger utløses bare når verdien
     krysser grensa, så syklusen armerer seg selv.
   triggers:
@@ -146,12 +146,12 @@
   - data:
       title: "\U0001F4A7 Vanner sitronplanten"
       message: Jorda er nede i {{ states('sensor.sitronplante_soil_moisture') }}%.
-        Starter vanning, og holder på til den er over 55%.
+        Starter vanning, og holder på til den er over 60%.
     action: notify.mobile_app_iphone_15_pro_vegard
   - data:
       title: "\U0001F4A7 Vanner sitronplanten"
       message: Jorda er nede i {{ states('sensor.sitronplante_soil_moisture') }}%.
-        Starter vanning, og holder på til den er over 55%.
+        Starter vanning, og holder på til den er over 60%.
     action: notify.mobile_app_iphone
   - repeat:
       sequence:
@@ -171,7 +171,7 @@
         conditions:
         - condition: numeric_state
           entity_id: sensor.sitronplante_soil_moisture
-          above: 55
+          above: 60
         - condition: template
           value_template: '{{ repeat.index >= 6 }}'
         - condition: state
@@ -180,7 +180,7 @@
   - if:
     - condition: numeric_state
       entity_id: sensor.sitronplante_soil_moisture
-      below: 55
+      below: 60
     then:
     - data:
         title: "\U0001F4A7 Vanningen når ikke målet"
