@@ -175,7 +175,7 @@
           entity_id: sensor.sitronplante_soil_moisture
           above: 60
         - condition: template
-          value_template: '{{ repeat.index >= 6 }}'
+          value_template: '{{ repeat.index >= 10 }}'
         - condition: state
           entity_id: binary_sensor.third_reality_inc_3rwk0148z_moisture
           state: 'on'
